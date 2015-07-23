@@ -6,6 +6,10 @@ class Post {
     String content
     Date lastUpdated
     Boolean published = false
+    SortedSet comments
+
+
+    static hasMany = [comments:Comment]
 
     static constraints = {
     }
