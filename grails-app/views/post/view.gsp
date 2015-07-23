@@ -17,5 +17,19 @@
 <p>${post.teaser}</p>
 
 <p>${post.content}</p>
+<br>
+<br>
+
+<g:link controller="comment" action="edit" id="${post.id}">
+    Add a comment
+</g:link>
+
+<g:each in="${post.comments}" var="comment">
+    <div class="comment">
+        <p>${comment.comment}</p>
+        <p>Posted by: ${comment.who.name} on ${comment.dateCreated}</p>
+    </div>
+</g:each>
+
 </body>
 </html>

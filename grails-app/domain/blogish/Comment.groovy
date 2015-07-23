@@ -1,6 +1,6 @@
 package blogish
 
-class Comment {
+class Comment implements Comparable {
 
 static belongsTo = Post
     
