@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="blogish.PostSpec" tests="4" skipped="0" failures="0" errors="0" timestamp="2015-07-23T18:08:40" hostname="AaronLenovo" time="4.014">
+<testsuite name="blogish.PostSpec" tests="4" skipped="0" failures="1" errors="0" timestamp="2015-07-23T18:09:48" hostname="AaronLenovo" time="3.362">
   <properties/>
-  <testcase name="testCrud" classname="blogish.PostSpec" time="3.804"/>
-  <testcase name="test update" classname="blogish.PostSpec" time="0.04"/>
-  <testcase name="test delete" classname="blogish.PostSpec" time="0.145"/>
-  <testcase name="testTitleIsRequired" classname="blogish.PostSpec" time="0.025"/>
-  <system-out><![CDATA[blogish.Post : (unsaved)]]></system-out>
+  <testcase name="testCrud" classname="blogish.PostSpec" time="3.255"/>
+  <testcase name="test update" classname="blogish.PostSpec" time="0.035"/>
+  <testcase name="test delete" classname="blogish.PostSpec" time="0.048"/>
+  <testcase name="testTitleIsRequired" classname="blogish.PostSpec" time="0.024">
+    <failure message="groovy.lang.MissingMethodException: No signature of method: blogish.Post.plus() is applicable for argument types: (java.lang.String) values: [hi this is the post]&#10;Possible solutions: last(java.lang.String), last(), list(), find(java.lang.String), first(java.lang.String), last(java.util.Map)" type="groovy.lang.MissingMethodException">groovy.lang.MissingMethodException: No signature of method: blogish.Post.plus() is applicable for argument types: (java.lang.String) values: [hi this is the post]
+Possible solutions: last(java.lang.String), last(), list(), find(java.lang.String), first(java.lang.String), last(java.util.Map)
+	at blogish.PostSpec.testTitleIsRequired(PostSpec.groovy:68)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
