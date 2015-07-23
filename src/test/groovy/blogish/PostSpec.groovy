@@ -47,9 +47,10 @@ class PostSpec extends Specification {
         post.save()
         Post retrievedPost = Post.get(id)
 
-        expect:"Post is published"
-            true == retrievedPost.published
+        expect: "Post is published"
+        true == retrievedPost.published
     }
+
     void "test delete"() {
         Post post = new Post(title: "First Grails Project",
                 teaser: "Clearing out the clutter",
@@ -59,14 +60,15 @@ class PostSpec extends Specification {
 
         def id = post.id
 
-        post.delete(flush :true)
-        expect:"post is deleted"
+        post.delete(flush: true)
+        expect: "post is deleted"
         null == Post.get(id)
     }
-    void testTitleIsRequired(){
-        Post post = new Post(teaser:"foo",content:"bar",published:false)
+
+    void testTitleIsRequired() {
+        Post post = new Post(teaser: "foo", content: "bar", published: false)
         print post
-        expect:"can't save"
-            null == post.save()
+        expect: "can't save"
+        null == post.save()
     }
 }
