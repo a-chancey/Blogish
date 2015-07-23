@@ -59,9 +59,14 @@ class PostSpec extends Specification {
 
         def id = post.id
 
-        post.delete()
+        post.delete(flush :true)
         expect:"post is deleted"
         null == Post.get(id)
-
+    }
+    void testTitleIsRequired(){
+        Post post = new Post(teaser:"foo",content:"bar",published:false)
+        print post
+        expect:"can't save"
+            null == post.save()
     }
 }
