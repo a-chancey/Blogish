@@ -10,34 +10,58 @@ import spock.lang.Specification
 class PostSpec extends Specification {
 
     def setup() {
+
     }
 
     def cleanup() {
     }
 
-    void testCrud(){
+    void "testCrud"() {
+        Post post = new Post(title: "First Grails Project",
+                teaser: "Clearing out the clutter",
+                content: "The full content of the article",
+                published: false)
 
-    Post post = new Post(title:"First Grails Project",
-                         teaser:"Clearing out the clutter",
-                         content:"The full content of the article",
-                         published:false)
+        post.save()
 
-    post.save()
 
-    def id = post.id
-    Post retrievedPost = Post.get(id)
+        def id = post.id
+        Post retrievedPost = Post.get(id)
 
-    assertEquals("First Grails Project", retrievedPost.title)
+        expect: "post title"
+        "First Grails Project" == retrievedPost.title
+        null == Post.get(10)
 
-    assertNull(Post.get(10))
+    }
 
-    post.published = true
-    post.save()
+    void "test update"() {
+        Post post = new Post(title: "First Grails Project",
+                teaser: "Clearing out the clutter",
+                content: "The full content of the article",
+                published: false)
+        post.save()
 
-    retrievedPost = Post.get(id)
-    assertEquals(true, retrievedPost.published)
+        def id = post.id
 
-    post.delete()
-    assertEquals(null, Post.get(id))
-}
+        post.published = true
+        post.save()
+        Post retrievedPost = Post.get(id)
+
+        expect:"Post is published"
+            true == retrievedPost.published
+    }
+    void "test delete"() {
+        Post post = new Post(title: "First Grails Project",
+                teaser: "Clearing out the clutter",
+                content: "The full content of the article",
+                published: false)
+        post.save()
+
+        def id = post.id
+
+        post.delete()
+        expect:"post is deleted"
+        null == Post.get(id)
+
+    }
 }

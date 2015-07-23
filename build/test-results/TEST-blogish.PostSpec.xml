@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="blogish.PostSpec" tests="1" skipped="0" failures="1" errors="0" timestamp="2015-07-23T15:34:37" hostname="AaronLenovo" time="9.547">
+<testsuite name="blogish.PostSpec" tests="3" skipped="0" failures="1" errors="0" timestamp="2015-07-23T18:00:03" hostname="AaronLenovo" time="3.437">
   <properties/>
-  <testcase name="test something" classname="blogish.PostSpec" time="9.547">
-    <failure message="Condition not satisfied:&#10;&#10;true == false&#10;     |&#10;     false&#10;" type="org.spockframework.runtime.SpockComparisonFailure">Condition not satisfied:
+  <testcase name="testCrud" classname="blogish.PostSpec" time="3.354"/>
+  <testcase name="test update" classname="blogish.PostSpec" time="0.047"/>
+  <testcase name="test delete" classname="blogish.PostSpec" time="0.036">
+    <failure message="Condition not satisfied:&#10;&#10;null == Post.get(id)&#10;     |       |   |&#10;     false   |   1&#10;             blogish.Post : 1&#10;" type="org.spockframework.runtime.SpockComparisonFailure">Condition not satisfied:
 
-true == false
-     |
-     false
+null == Post.get(id)
+     |       |   |
+     false   |   1
+             blogish.Post : 1
 
-	at blogish.PostSpec.test something(PostSpec.groovy:20)
+	at blogish.PostSpec.test delete(PostSpec.groovy:64)
 </failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>
