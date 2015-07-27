@@ -9,14 +9,22 @@ import spock.lang.Specification
 @TestFor(PostController)
 class PostControllerSpec extends Specification {
 
+
     def setup() {
     }
 
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void testStartUrlCanBeDetermined() {
+        def request = new Expando()
+        request.serverName = "localhost"
+        request.serverPort = "8080"
+        request.contextPath = "/groovypublish"
+
+        def controller = new PostController()
+        expect:"get the url"
+            controller.startUrl(request) == "http://localhost:8080/groovypublish"
     }
+
 }

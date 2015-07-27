@@ -5,16 +5,6 @@
   Time: 2:28 PM
 --%>
 
-<%@ page contentType="text/html;charset=UTF-8" %>
-<html>
-<head>
-    <title>Fancy Chancey Blog</title>
-</head>
-
-<body>
-
-<!--<h1>Welcome to the Fancy Chancey blog!</h1> -->
-<!-- <g:render template="/layouts/header"/> -->
 <g:link controller="post" action="edit">
     Create a new post!
 </g:link>
@@ -24,6 +14,7 @@
             ${post.title}
         </g:link>
     </h2>
+    <br/>
 
     <p>${post.teaser}</p>
 
@@ -36,7 +27,8 @@
     <g:link controller="post" action="edit" id="${post.id}">
         Edit this post
     </g:link>
-    </div>
+    <br/>
+    <br/>
+    <hr/>
+    <br/>
 </g:each>
-</body>
-</html>

@@ -13,7 +13,7 @@ class PostController {
 
     def list = {
         render(
-                view: 'list',
+                template: 'list',
                 model: [posts: Post.list(
                         sort: 'lastUpdated',
                         order: 'desc')])
@@ -23,7 +23,7 @@ class PostController {
         def post = loadPost(params.id)
         post.properties = params
         if (post.save()) {
-            redirect(action: 'list')
+            redirect(uri: '/')
         } else {
             render(view: 'edit', model: [post: post])
         }
@@ -31,6 +31,16 @@ class PostController {
 
     def view = {
         render(view: 'view', model: [post: Post.get(params.id)])
+    }
+
+    def rss = {
+        def posts = Post.list(sort:'lastUpdated',
+                    order:'desc')
+        render(contentType: "text/xml", text:new PostRssBuilder(request:request).buildRss(posts))
+    }
+
+    def startUrl(request) {
+        return "http://${request.serverName}:${request.serverPort}${request.contextPath}"
     }
 
     private loadPost(id) {

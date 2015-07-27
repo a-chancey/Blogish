@@ -11,8 +11,9 @@
         <g:layoutHead/>
     </head>
     <body>
-        <div class="header">This is my header</div>
-        <g:layoutBody/>
+        <div class="nav"><div class="center"><asset:image src="logo.jpg" width="100%" height="auto"/></div></div>
+    <br/>
+        <div><div class="center"><br/><g:layoutBody/><br/></div></div>
         <div class="footer" role="contentinfo">This is my footer</div>
         <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
     </body>

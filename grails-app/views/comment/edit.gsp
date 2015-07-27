@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
+    <meta name="layout" content="main"/>
+
     <title>Leave your comment</title>
 </head>
 
@@ -16,7 +18,7 @@
     <g:renderErrors bean="${comment}"/>
 </div>
 <g:form controller="comment" action="save">
-    <g:hiddenField name="postId" value="${postId}"/>\
+    <g:hiddenField name="postId" value="${postId}"/>
     <dl>
         <dt>Your Name:</dt>
         <dd>

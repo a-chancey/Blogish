@@ -104,6 +104,11 @@ img {
     color: #255b17;
 }
 
+.center {
+    margin: auto;
+    width: 80%;
+}
+
 .spinner {
     background: url(../images/spinner.gif) 50% 50% no-repeat transparent;
     height: 16px;
