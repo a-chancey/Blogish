@@ -8,8 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="main"/>
-
     <title>Fancy Chancey Blog</title>
 </head>
 
@@ -26,7 +24,7 @@
             ${post.title}
         </g:link>
     </h2>
-    <br/>
+
     <p>${post.teaser}</p>
 
     <h5>Last updated: ${post.lastUpdated}</h5>
@@ -38,9 +36,6 @@
     <g:link controller="post" action="edit" id="${post.id}">
         Edit this post
     </g:link>
-    <br />
-    <hr/>
-    <br />
     </div>
 </g:each>
 </body>
